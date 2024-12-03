@@ -53,7 +53,7 @@ int main() {
             }
 
             start += pmatch[0].rm_eo;
-            //continue;
+            continue;
         }
 
         ret = regexec(&regexDo, start, 1, pmatch, 0);
@@ -61,7 +61,7 @@ int main() {
         if (ret == 0) {
             mulEnable = 1;
             start += pmatch[0].rm_eo;
-            //continue;
+            continue;
         }
 
         ret = regexec(&regexDont, start, 1, pmatch, 0);
@@ -69,7 +69,7 @@ int main() {
         if (ret == 0) {
             mulEnable = 0;
             start += pmatch[0].rm_eo;
-            //continue;
+            continue;
         }
 
         start++;
